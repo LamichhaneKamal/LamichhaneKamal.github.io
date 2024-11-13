@@ -1,0 +1,172 @@
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  padding: 20px;
+}
+
+/* Section title */
+h1.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Timeline Container */
+.timeline-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px;
+}
+
+.timeline-container {
+  overflow-y: auto;
+  padding-bottom: 10px;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-left: 20px;
+}
+
+/* Timeline Items */
+.timeline-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 40px;
+  position: relative;
+  padding-left: 20px;
+  border-left: 5px solid #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 8px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+}
+
+.timeline-item:hover {
+  transform: translateX(10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Adding Colorful Gradient to Cards */
+.timeline-item.qualcomm {
+  background: linear-gradient(135deg, #00b0f0, #006d9e); /* Qualcomm Blue */
+  color: #fff;
+}
+
+.timeline-item.seneca {
+  background: linear-gradient(135deg, #ff9900, #ffcc33); /* Seneca Orange */
+  color: #fff;
+}
+
+.timeline-item.leddartech {
+  background: linear-gradient(135deg, #009c82, #00755b); /* LeddarTech Green */
+  color: #fff;
+}
+
+.timeline-item.ciena {
+  background: linear-gradient(135deg, #f36f6f, #d04c4c); /* Ciena Red */
+  color: #fff;
+}
+
+.timeline-item.ricardo {
+  background: linear-gradient(135deg, #00b894, #00796b); /* Ricardo Green */
+  color: #fff;
+}
+
+.timeline-item.uwaterloo {
+  background: linear-gradient(135deg, #00274c, #001a33); /* Waterloo Blue */
+  color: #fff;
+}
+
+/* Timeline Item Date */
+.timeline-item .date {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: #333;
+  padding: 5px 15px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+/* Timeline Item Content */
+.timeline-item .timeline-content {
+  padding: 20px;
+  border-radius: 8px;
+  background: transparent;
+}
+
+.timeline-item .role-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.timeline-item .company {
+  font-size: 1.1rem;
+  color: #eee;
+  margin-bottom: 10px;
+}
+
+.timeline-item .description {
+  font-size: 1rem;
+  color: #fff;
+}
+
+.timeline-item .description li {
+  margin-bottom: 10px;
+}
+
+.timeline-item .technologies {
+  margin-top: 15px;
+}
+
+.timeline-item .tech {
+  background-color: #333;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  margin-right: 10px;
+  font-size: 0.9rem;
+}
+
+/* Timeline Line */
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 10px; /* Position the line inside the padding */
+  top: 0;
+  bottom: 0;
+  width: 2px; /* Set the width of the line */
+  background-color: #ccc; /* Make the line light gray */
+  z-index: -1; /* Ensure the line is behind the cards */
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 12px;
+  height: 12px;
+  background-color: #fff;
+  border-radius: 50%;
+  transform: translateX(-50%);
+}

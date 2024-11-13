@@ -1,61 +1,565 @@
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     line-height: 1.6;
     padding: 20px;
-    background-color: #f4f4f4;
-}
-header {
-    background-color: #333;
+    background: linear-gradient(45deg, #ff7f50, #1e90ff);
+    /*background: linear-gradient(135deg, #f06, #4a90e2);*/
     color: #fff;
-    padding: 10px 0;
-    text-align: center;
+    min-height: 100vh;
 }
+
+header {
+    background-color: #222;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
 header h1 {
     margin-bottom: 10px;
+    font-size: 2.5em;
+    font-weight: bold;
+    letter-spacing: 1px;
 }
+
 header p {
     margin-bottom: 20px;
+    font-style: italic;
 }
+
 nav ul {
     list-style: none;
     padding: 0;
 }
+
 nav ul li {
-    display: inline;
+    display: inline-block;
     margin: 0 15px;
 }
+
 nav ul li a {
     color: #fff;
     text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
 }
+
+nav ul li a:hover {
+    color: #f1c40f;
+}
+
 main {
-    margin-top: 20px;
+    margin-top: 30px;
     background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #333;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+main:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
 h2 {
     color: #333;
     margin-bottom: 20px;
+    font-size: 2em;
+    border-bottom: 2px solid #f1c40f;
+    padding-bottom: 5px;
 }
+
 ul {
     list-style-type: square;
     margin-left: 20px;
 }
+
 ul li {
     margin-bottom: 10px;
+    font-size: 1.1em;
 }
+
 a {
-    color: #333;
+    color: #e67e22;
     text-decoration: none;
+    transition: color 0.3s ease;
 }
+
 a:hover {
+    color: #d35400;
     text-decoration: underline;
 }
+
+button {
+    background-color: #f1c40f;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #e67e22;
+    transform: scale(1.05);
+}
+
+.skills-highlight {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.skill-card {
+    background-color: #fff;
+    color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    flex: 1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 30%;
+    min-width: 250px;
+}
+
+.skill-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.skill-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #6a11cb; /* Vibrant purple */
+}
+
+.skill-card p {
+    font-size: 1.1em;
+    color: #555;
+}
+
+.icon {
+    font-size: 2.5em;
+    display: block;
+    margin-bottom: 15px;
+    color: #f1c40f; /* Vibrant yellow */
+}
+.intro-section {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.intro-section h2 {
+    font-size: 2.5em;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.intro-section p {
+    font-size: 1.3em;
+    color: #ddd;
+    margin-bottom: 30px;
+}
+
+.skills-highlight {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.education-highlight {
+    display: flex;
+    flex-direction: column; /* Stack the cards vertically */
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.education-card {
+    background-color: #fff;
+    color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%; /* Full width for each card */
+    max-width: 800px;  /* Max width for better readability */
+    margin: 0 auto;  /* Center the cards horizontally */
+}
+
+.education-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.education-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #6a11cb; /* Vibrant purple */
+}
+
+.education-card p {
+    font-size: 1.1em;
+    color: #555;
+}
+
+.icon {
+    font-size: 2.5em;
+    display: block;
+    margin-bottom: 15px;
+    color: #f1c40f; /* Vibrant yellow */
+}
+
+.education-title {
+    text-align: center;  /* Centers the title horizontally */
+    font-size: 2em;      /* You can adjust the font size as needed */
+    margin-bottom: 30px; /* Adds some space below the title */
+    color: #6a11cb;      /* You can change the color if desired */
+}
+
+
+/* Container for all the connect cards */
+.connect-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Card Styling */
+.connect-card {
+    padding: 20px;
+    border-radius: 10px;
+    width: 220px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+.connect-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Emoji Styling */
+.emoji {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+/* Specific Card Colors */
+#email { background: lightblue; }
+#linkedin { background: lightgray; }
+#website { background: lightgreen; }
+#twitter { background: #1DA1F2; }
+
+/* Text Styling for Cards */
+.connect-card h3 {
+    margin: 10px 0;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.connect-card p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 0;
+}
+
+/* Hover Effects */
+#email:hover {
+    background-color: #57a9e2;
+}
+#linkedin:hover {
+    background-color: #d2d2d2;
+}
+#website:hover {
+    background-color: #8dd1a0;
+}
+#twitter:hover {
+    background-color: #1A91DA;
+}
+
+/* General styles for the work experience container */
+.work-experience-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh; /* Ensures the content fills the full height of the screen */
+    overflow: hidden; /* Prevents scrolling */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Work Experience Card Styles */
+.work-experience-card {
+    width: 80%;
+    max-width: 350px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 15px 0;
+    padding: 20px;
+    cursor: pointer;
+    position: relative;
+}
+
+/* Colorful background for each card */
+.work-experience-card:nth-child(1) {
+    background-color: #ff8a80; /* Light red */
+}
+.work-experience-card:nth-child(2) {
+    background-color: #80d0ff; /* Light blue */
+}
+.work-experience-card:nth-child(3) {
+    background-color: #b2ff59; /* Light green */
+}
+.work-experience-card:nth-child(4) {
+    background-color: #ffd54f; /* Light yellow */
+}
+.work-experience-card:nth-child(5) {
+    background-color: #f48fb1; /* Light pink */
+}
+.work-experience-card:nth-child(6) {
+    background-color: #c5e1a5; /* Light lime green */
+}
+
+.work-experience-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Text Styling */
+.work-experience-card .company-name {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.work-experience-card .job-title {
+    font-size: 1.1em;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.work-experience-card .dates {
+    font-size: 0.9em;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.work-experience-card .job-details {
+    font-size: 1em;
+    color: #333;
+    line-height: 1.6;
+}
+
+.work-experience-card .job-details ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.work-experience-card .job-details li {
+    margin-bottom: 10px;
+    font-size: 0.95em;
+    display: flex;
+    align-items: center;
+}
+
+.work-experience-card .job-details li::before {
+    content: '🤘'; /* Rocker emoji */
+    margin-right: 8px;
+    font-size: 1.2em;
+    color: #fff;
+}
+
+
+
+h1.section-title {
+    text-align: center;
+    font-size: 3rem;
+    color: #e0e0e0;
+    margin-bottom: 30px;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+    /* Timeline Container */
+/* Section title */
+h1.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Timeline Container */
+  .timeline-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+  }
+  
+  .timeline-container {
+    overflow-y: auto;
+    padding-bottom: 10px;
+  }
+  
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding-left: 20px;
+  }
+  
+  /* Timeline Items */
+  .timeline-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 40px;
+    position: relative;
+    padding-left: 20px;
+    border-left: 5px solid #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 8px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  .timeline-item:hover {
+    transform: translateX(10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Adding Colorful Gradient to Cards */
+  .timeline-item.qualcomm {
+    background: linear-gradient(135deg, #00b0f0, #006d9e); /* Qualcomm Blue */
+    color: #fff;
+  }
+  
+  .timeline-item.seneca {
+    background: linear-gradient(135deg, #ff9900, #ffcc33); /* Seneca Orange */
+    color: #fff;
+  }
+  
+  .timeline-item.leddartech {
+    background: linear-gradient(135deg, #009c82, #00755b); /* LeddarTech Green */
+    color: #fff;
+  }
+  
+  .timeline-item.ciena {
+    background: linear-gradient(135deg, #f36f6f, #d04c4c); /* Ciena Red */
+    color: #fff;
+  }
+  
+  .timeline-item.ricardo {
+    background: linear-gradient(135deg, #00b894, #00796b); /* Ricardo Green */
+    color: #fff;
+  }
+  
+  .timeline-item.uwaterloo {
+    background: linear-gradient(135deg, #00274c, #001a33); /* Waterloo Blue */
+    color: #fff;
+  }
+  
+  /* Timeline Item Date */
+  .timeline-item .date {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #333;
+    padding: 5px 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  /* Timeline Item Content */
+  .timeline-item .timeline-content {
+    padding: 20px;
+    border-radius: 8px;
+    background: transparent;
+  }
+  
+  .timeline-item .role-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+  
+  .timeline-item .company {
+    font-size: 1.1rem;
+    color: #eee;
+    margin-bottom: 10px;
+  }
+  
+  .timeline-item .description {
+    font-size: 1rem;
+    color: #fff;
+  }
+  
+  .timeline-item .description li {
+    margin-bottom: 10px;
+  }
+  
+  .timeline-item .technologies {
+    margin-top: 15px;
+  }
+  
+  .timeline-item .tech {
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    margin-right: 10px;
+    font-size: 0.9rem;
+  }
+  
+  /* Timeline Line */
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 10px; /* Position the line inside the padding */
+    top: 0;
+    bottom: 0;
+    width: 2px; /* Set the width of the line */
+    background-color: #ccc; /* Make the line light gray */
+    z-index: -1; /* Ensure the line is behind the cards */
+  }
+  
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 12px;
+    height: 12px;
+    background-color: #fff;
+    border-radius: 50%;
+    transform: translateX(-50%);
+  }

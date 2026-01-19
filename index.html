@@ -1,6 +1,4 @@
----
-layout: none
----
+
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -898,7 +896,7 @@ layout: none
 	</section>
 
 
-	<!-- Blog Section with Dynamic Jekyll Integration -->
+	<!-- Blog Section -->
 	<section id="blog" class="section blog-section">
 		<div class="container">
 			<div class="section-header">
@@ -906,45 +904,80 @@ layout: none
 				<h2 class="section-title">Blog & <span class="gradient-text">Articles</span></h2>
 			</div>
 			<div class="blog-grid" style="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem;">
-				{% assign post_count = 0 %}
-				{% for post in site.posts limit:3 %}
-					{% assign post_count = post_count | plus: 1 %}
-					<div class="blog-card {% if post_count == 1 %}featured{% endif %}">
+				<div class="blog-card featured">
 					<div class="blog-image">
-						{% if post.image %}
-						<img src="{{ post.image }}" alt="{{ post.title }}">
-						{% else %}
-						{% if post.category contains 'Generative' or post.category contains 'AI' %}
-						<img src="https://images.unsplash.com/photo-1677756119517-756a188d2d94?w=800&q=80" alt="{{ post.title }}">
-						{% elsif post.category contains 'Edge' or post.category contains 'Optimization' %}
-						<img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800&q=80" alt="{{ post.title }}">
-						{% elsif post.category contains 'Transformer' or post.category contains 'Deep Learning' %}
-						<img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800&q=80" alt="{{ post.title }}">
-						{% else %}
-						<img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80" alt="{{ post.title }}">
-						{% endif %}
-						{% endif %}
+						<img src="https://images.unsplash.com/photo-1677756119517-756a188d2d94?w=800&q=80" alt="Generative AI">
 						<div class="blog-overlay">
-							<div class="blog-badge">{% if post_count == 1 %}Featured{% else %}{{ post.category | default: 'Article' }}{% endif %}</div>
+							<div class="blog-badge">Featured</div>
 						</div>
 					</div>
 					<div class="blog-content">
 						<div class="blog-meta">
-							<span><i class="fas fa-calendar"></i> {{ post.date | date: "%B %d, %Y" }}</span>
-							<span><i class="fas fa-clock"></i> {{ post.read_time | default: 8 }} min read</span>
-							<span><i class="fas fa-tag"></i> {{ post.category }}</span>
+							<span><i class="fas fa-calendar"></i> January 19, 2026</span>
+							<span><i class="fas fa-clock"></i> 12 min read</span>
+							<span><i class="fas fa-tag"></i> Generative AI</span>
 						</div>
-						<h3>{{ post.title }}</h3>
-						<p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+						<h3>The Future of Generative AI: From LLMs to Multimodal Intelligence</h3>
+						<p>Exploring the evolution of generative AI from large language models to sophisticated multimodal systems, covering transformer architectures, inference optimization, and ethical considerations.</p>
 						<div class="tech-tags">
-							{% for tag in post.tags limit:4 %}
-							<span class="tag">{{ tag }}</span>
-							{% endfor %}
+							<span class="tag">LLMs</span>
+							<span class="tag">Transformers</span>
+							<span class="tag">Multimodal</span>
+							<span class="tag">Ethics</span>
 						</div>
-						<a href="{{ post.url }}" class="read-more-btn">Read Full Article <i class="fas fa-arrow-right"></i></a>
+						<a href="blog/generative-ai-future.html" class="read-more-btn">Read Full Article <i class="fas fa-arrow-right"></i></a>
 					</div>
+				</div>
+
+				<div class="blog-card">
+					<div class="blog-image">
+						<img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800&q=80" alt="Edge AI">
+						<div class="blog-overlay">
+							<div class="blog-badge">Technical</div>
+						</div>
 					</div>
-				{% endfor %}
+					<div class="blog-content">
+						<div class="blog-meta">
+							<span><i class="fas fa-calendar"></i> January 15, 2026</span>
+							<span><i class="fas fa-clock"></i> 10 min read</span>
+							<span><i class="fas fa-tag"></i> Edge AI</span>
+						</div>
+						<h3>Edge AI Optimization: Bringing Intelligence to Resource-Constrained Devices</h3>
+						<p>Learn about model compression techniques, efficient architectures, runtime optimization, and hardware acceleration strategies that enable sophisticated AI on smartphones, IoT devices, and embedded systems.</p>
+						<div class="tech-tags">
+							<span class="tag">Quantization</span>
+							<span class="tag">Pruning</span>
+							<span class="tag">Mobile AI</span>
+							<span class="tag">NPUs</span>
+						</div>
+						<a href="blog/edge-ai-optimization.html" class="read-more-btn">Read Full Article <i class="fas fa-arrow-right"></i></a>
+					</div>
+				</div>
+
+				<div class="blog-card">
+					<div class="blog-image">
+						<img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800&q=80" alt="Transformers">
+						<div class="blog-overlay">
+							<div class="blog-badge">Deep Dive</div>
+						</div>
+					</div>
+					<div class="blog-content">
+						<div class="blog-meta">
+							<span><i class="fas fa-calendar"></i> January 10, 2026</span>
+							<span><i class="fas fa-clock"></i> 15 min read</span>
+							<span><i class="fas fa-tag"></i> Deep Learning</span>
+						</div>
+						<h3>Understanding Transformer Models: The Architecture That Changed AI</h3>
+						<p>A comprehensive exploration of transformer architecture, from self-attention mechanisms to modern variants like GPT and BERT. Covers training techniques, efficiency improvements, and applications beyond NLP.</p>
+						<div class="tech-tags">
+							<span class="tag">Attention</span>
+							<span class="tag">BERT</span>
+							<span class="tag">GPT</span>
+							<span class="tag">Vision</span>
+						</div>
+						<a href="blog/transformer-models.html" class="read-more-btn">Read Full Article <i class="fas fa-arrow-right"></i></a>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>

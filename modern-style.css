@@ -1992,10 +1992,17 @@ a:focus {
 }
 
 @media (max-width: 768px) {
+	/* Mobile: full-width top bar instead of centered pill */
 	.floating-nav {
-		top: 1rem;
-		padding: 0.75rem 1.5rem;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		transform: none;
+		border-radius: 0;
+		padding: 0.75rem 1rem;
 		gap: 1rem;
+		justify-content: space-between;
 	}
 	
 	.nav-menu {

@@ -213,12 +213,6 @@ GitHub Pages will automatically:
 
 ### Custom Sorting
 
-```liquid
-{% assign sorted_posts = site.posts | sort: 'read_time' %}
-{% for post in sorted_posts limit:3 %}
-  <!-- Sorted by read time -->
-{% endfor %}
-```
 
 ## Troubleshooting
 

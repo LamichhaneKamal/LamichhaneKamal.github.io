@@ -906,12 +906,10 @@ layout: none
 				<h2 class="section-title">Blog & <span class="gradient-text">Articles</span></h2>
 			</div>
 			<div class="blog-grid" style="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem;">
-				
 				{% assign post_count = 0 %}
 				{% for post in site.posts limit:3 %}
-				{% assign post_count = post_count | plus: 1 %}
-				
-				<div class="blog-card {% if post_count == 1 %}featured{% endif %}">
+					{% assign post_count = post_count | plus: 1 %}
+					<div class="blog-card {% if post_count == 1 %}featured{% endif %}">
 					<div class="blog-image">
 						{% if post.image %}
 						<img src="{{ post.image }}" alt="{{ post.title }}">

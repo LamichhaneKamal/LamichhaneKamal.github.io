@@ -1,0 +1,88 @@
+---
+layout: none
+---
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Kamal Lamichhane - AI & Embedded Systems Expert</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	
+	<!-- Modern Fonts -->
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+	
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	
+	<!-- Custom Styles -->
+	<link rel="stylesheet" href="modern-style.css" />
+</head>
+
+<body>
+	<!-- ... All your existing HTML sections remain the same until Blog Section ... -->
+	
+	<!-- Blog Section with Dynamic Jekyll Integration -->
+	<section id="blog" class="section blog-section">
+		<div class="container">
+			<div class="section-header">
+				<span class="section-tag">Technical Insights</span>
+				<h2 class="section-title">Blog & <span class="gradient-text">Articles</span></h2>
+			</div>
+			<div class="blog-grid" style="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem;">
+				
+				{% comment %}
+				This will automatically display the 3 most recent blog posts from _posts/ directory
+				{% endcomment %}
+				
+				{% assign post_count = 0 %}
+				{% for post in site.posts limit:3 %}
+				{% assign post_count = post_count | plus: 1 %}
+				
+				<div class="blog-card {% if post_count == 1 %}featured{% endif %}">
+					<div class="blog-image">
+						{% if post.image %}
+						<img src="{{ post.image }}" alt="{{ post.title }}">
+						{% else %}
+						{% comment %}Default images based on category{% endcomment %}
+						{% if post.category contains 'Generative' or post.category contains 'AI' %}
+						<img src="https://images.unsplash.com/photo-1677756119517-756a188d2d94?w=800&q=80" alt="{{ post.title }}">
+						{% elsif post.category contains 'Edge' or post.category contains 'Optimization' %}
+						<img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800&q=80" alt="{{ post.title }}">
+						{% elsif post.category contains 'Transformer' or post.category contains 'Deep Learning' %}
+						<img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800&q=80" alt="{{ post.title }}">
+						{% else %}
+						<img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80" alt="{{ post.title }}">
+						{% endif %}
+						{% endif %}
+						<div class="blog-overlay">
+							<div class="blog-badge">{% if post_count == 1 %}Featured{% else %}{{ post.category | default: 'Article' }}{% endif %}</div>
+						</div>
+					</div>
+					<div class="blog-content">
+						<div class="blog-meta">
+							<span><i class="fas fa-calendar"></i> {{ post.date | date: "%B %d, %Y" }}</span>
+							<span><i class="fas fa-clock"></i> {{ post.read_time | default: 8 }} min read</span>
+							<span><i class="fas fa-tag"></i> {{ post.category }}</span>
+						</div>
+						<h3>{{ post.title }}</h3>
+						<p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+						<div class="tech-tags">
+							{% for tag in post.tags limit:4 %}
+							<span class="tag">{{ tag }}</span>
+							{% endfor %}
+						</div>
+						<a href="{{ post.url }}" class="read-more-btn">Read Full Article <i class="fas fa-arrow-right"></i></a>
+					</div>
+				</div>
+				{% endfor %}
+				
+			</div>
+		</div>
+	</section>
+
+	<!-- ... Rest of your HTML ... -->
+
+	<!-- Scripts -->
+	<script src="modern-script.js"></script>
+</body>
+</html>

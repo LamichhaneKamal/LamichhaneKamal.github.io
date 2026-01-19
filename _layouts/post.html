@@ -1,0 +1,170 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>{{ page.title }} - Kamal Lamichhane</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	<link rel="stylesheet" href="{{ site.baseurl }}/modern-style.css" />
+	<style>
+		.blog-post {
+			max-width: 900px;
+			margin: 8rem auto 4rem;
+			padding: 0 2rem;
+		}
+		.blog-header {
+			margin-bottom: 3rem;
+		}
+		.blog-title {
+			font-size: 3rem;
+			font-weight: 900;
+			color: var(--white);
+			margin-bottom: 1rem;
+			line-height: 1.2;
+		}
+		.blog-post-meta {
+			display: flex;
+			gap: 2rem;
+			color: var(--gray);
+			margin-bottom: 2rem;
+			flex-wrap: wrap;
+		}
+		.blog-post-meta span {
+			display: flex;
+			align-items: center;
+			gap: 0.5rem;
+		}
+		.blog-post-content {
+			color: var(--light);
+			line-height: 1.8;
+			font-size: 1.1rem;
+		}
+		.blog-post-content h2 {
+			color: var(--white);
+			font-size: 2rem;
+			margin: 3rem 0 1.5rem;
+		}
+		.blog-post-content h3 {
+			color: var(--white);
+			font-size: 1.5rem;
+			margin: 2rem 0 1rem;
+		}
+		.blog-post-content p {
+			margin-bottom: 1.5rem;
+		}
+		.blog-post-content ul, .blog-post-content ol {
+			margin: 1.5rem 0;
+			padding-left: 2rem;
+		}
+		.blog-post-content li {
+			margin-bottom: 1rem;
+		}
+		.blog-post-content code {
+			background: rgba(99, 102, 241, 0.1);
+			padding: 0.2rem 0.5rem;
+			border-radius: 4px;
+			color: var(--accent);
+		}
+		.blog-post-content pre {
+			background: rgba(0, 0, 0, 0.3);
+			padding: 1.5rem;
+			border-radius: 8px;
+			overflow-x: auto;
+			margin: 2rem 0;
+		}
+		.blog-post-content pre code {
+			background: none;
+			padding: 0;
+		}
+		.blog-post-content blockquote {
+			border-left: 4px solid var(--primary);
+			padding-left: 2rem;
+			margin: 2rem 0;
+			font-style: italic;
+			color: var(--gray);
+		}
+		.blog-post-content img {
+			max-width: 100%;
+			height: auto;
+			border-radius: 8px;
+			margin: 2rem 0;
+		}
+		.back-link {
+			display: inline-flex;
+			align-items: center;
+			gap: 0.5rem;
+			color: var(--primary);
+			text-decoration: none;
+			margin-bottom: 2rem;
+			transition: var(--transition-fast);
+		}
+		.back-link:hover {
+			color: var(--accent);
+			transform: translateX(-5px);
+		}
+		.post-tags {
+			display: flex;
+			gap: 0.5rem;
+			flex-wrap: wrap;
+			margin-top: 2rem;
+			padding-top: 2rem;
+			border-top: 1px solid rgba(255, 255, 255, 0.1);
+		}
+		.post-tags .tag {
+			background: rgba(99, 102, 241, 0.1);
+			color: var(--accent);
+			padding: 0.5rem 1rem;
+			border-radius: 20px;
+			font-size: 0.9rem;
+		}
+	</style>
+</head>
+<body>
+	<div class="animated-bg">
+		<div class="gradient-orb orb-1"></div>
+		<div class="gradient-orb orb-2"></div>
+		<div class="gradient-orb orb-3"></div>
+	</div>
+
+	<div class="blog-post">
+		<a href="{{ site.baseurl }}/index.html#blog" class="back-link">
+			<i class="fas fa-arrow-left"></i> Back to Blog
+		</a>
+
+		<div class="blog-header">
+			<h1 class="blog-title">{{ page.title }}</h1>
+			<div class="blog-post-meta">
+				<span><i class="fas fa-calendar"></i> {{ page.date | date: "%B %d, %Y" }}</span>
+				{% if page.read_time %}
+				<span><i class="fas fa-clock"></i> {{ page.read_time }} min read</span>
+				{% endif %}
+				{% if page.category %}
+				<span><i class="fas fa-tag"></i> {{ page.category }}</span>
+				{% endif %}
+				{% if page.author %}
+				<span><i class="fas fa-user"></i> {{ page.author }}</span>
+				{% endif %}
+			</div>
+		</div>
+
+		<div class="blog-post-content">
+			<blockquote style="background: rgba(255, 193, 7, 0.1); border-left: 4px solid #ffc107; padding: 1rem 1.5rem; margin: 0 0 2rem 0; border-radius: 4px;">
+				<p style="margin: 0; font-size: 0.95rem; font-style: normal;"><strong>Disclaimer:</strong> The views and opinions expressed in this article are those of the author and do not necessarily reflect the official policy or position of Qualcomm Incorporated or any of its affiliated companies.</p>
+			</blockquote>
+
+			{{ content }}
+		</div>
+
+		{% if page.tags %}
+		<div class="post-tags">
+			{% for tag in page.tags %}
+			<span class="tag">{{ tag }}</span>
+			{% endfor %}
+		</div>
+		{% endif %}
+	</div>
+
+	<script src="{{ site.baseurl }}/modern-script.js"></script>
+</body>
+</html>

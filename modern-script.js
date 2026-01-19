@@ -452,31 +452,46 @@ document.addEventListener('DOMContentLoaded', function() {
 	images.forEach(img => imageObserver.observe(img));
 	
 	// ===================================
-	// Scroll to Top Button
+	// Dark Mode Toggle
+	// ===================================
+	
+	const darkModeToggle = document.getElementById('darkModeToggle');
+	const body = document.body;
+	
+	// Check for saved theme preference or default to dark mode
+	const currentTheme = localStorage.getItem('theme') || 'dark';
+	if (currentTheme === 'light') {
+		body.classList.add('light-mode');
+		if (darkModeToggle) {
+			darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+		}
+	}
+	
+	// Toggle dark mode
+	if (darkModeToggle) {
+		darkModeToggle.addEventListener('click', () => {
+			body.classList.toggle('light-mode');
+			
+			// Update icon
+			if (body.classList.contains('light-mode')) {
+				darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+				localStorage.setItem('theme', 'light');
+			} else {
+				darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+				localStorage.setItem('theme', 'dark');
+			}
+		});
+	}
+	
+	// ===================================
+	// Enhanced Back to Top Button
 	// ===================================
 	
 	const createScrollToTop = () => {
 		const button = document.createElement('button');
+		button.className = 'back-to-top';
 		button.innerHTML = '<i class="fas fa-arrow-up"></i>';
-		button.style.cssText = `
-			position: fixed;
-			bottom: 2rem;
-			right: 2rem;
-			width: 50px;
-			height: 50px;
-			border-radius: 50%;
-			background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-			color: white;
-			border: none;
-			cursor: pointer;
-			display: none;
-			align-items: center;
-			justify-content: center;
-			font-size: 1.2rem;
-			z-index: 1000;
-			box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
-			transition: all 0.3s ease;
-		`;
+		button.setAttribute('aria-label', 'Scroll to top');
 		
 		button.addEventListener('click', () => {
 			window.scrollTo({
@@ -485,21 +500,11 @@ document.addEventListener('DOMContentLoaded', function() {
 			});
 		});
 		
-		button.addEventListener('mouseenter', () => {
-			button.style.transform = 'scale(1.1) translateY(-5px)';
-			button.style.boxShadow = '0 6px 20px rgba(102, 126, 234, 0.6)';
-		});
-		
-		button.addEventListener('mouseleave', () => {
-			button.style.transform = 'scale(1) translateY(0)';
-			button.style.boxShadow = '0 4px 15px rgba(102, 126, 234, 0.4)';
-		});
-		
 		window.addEventListener('scroll', () => {
 			if (window.pageYOffset > 300) {
-				button.style.display = 'flex';
+				button.classList.add('visible');
 			} else {
-				button.style.display = 'none';
+				button.classList.remove('visible');
 			}
 		});
 		
@@ -507,6 +512,193 @@ document.addEventListener('DOMContentLoaded', function() {
 	};
 	
 	createScrollToTop();
+	
+	// ===================================
+	// Page Loader
+	// ===================================
+	
+	const createPageLoader = () => {
+		const loader = document.createElement('div');
+		loader.className = 'page-loader';
+		loader.innerHTML = `
+			<div class="loader-content">
+				<div class="loader-spinner"></div>
+				<div class="loader-text">Loading...</div>
+			</div>
+		`;
+		document.body.appendChild(loader);
+		
+		window.addEventListener('load', () => {
+			setTimeout(() => {
+				loader.classList.add('hidden');
+				setTimeout(() => loader.remove(), 500);
+			}, 500);
+		});
+	};
+	
+	// Uncomment to enable page loader
+	// createPageLoader();
+	
+	// ===================================
+	// Accessibility: Skip to Content
+	// ===================================
+	
+	const createSkipLink = () => {
+		const skipLink = document.createElement('a');
+		skipLink.href = '#hero';
+		skipLink.className = 'skip-to-content';
+		skipLink.textContent = 'Skip to main content';
+		skipLink.setAttribute('tabindex', '0');
+		document.body.insertBefore(skipLink, document.body.firstChild);
+	};
+	
+	createSkipLink();
+	
+	// ===================================
+	// Keyboard Navigation Enhancement
+	// ===================================
+	
+	// Add keyboard support for interactive elements
+	document.querySelectorAll('.ai-card, .research-card, .blog-card').forEach(card => {
+		card.setAttribute('tabindex', '0');
+		card.setAttribute('role', 'article');
+		
+		card.addEventListener('keypress', (e) => {
+			if (e.key === 'Enter' || e.key === ' ') {
+				const link = card.querySelector('a');
+				if (link) link.click();
+			}
+		});
+	});
+	
+	// ===================================
+	// Testimonials Carousel (Optional Enhancement)
+	// ===================================
+	
+	const testimonialCards = document.querySelectorAll('.testimonial-card');
+	let currentTestimonial = 0;
+	
+	const rotateTestimonials = () => {
+		testimonialCards.forEach((card, index) => {
+			if (index === currentTestimonial) {
+				card.style.transform = 'scale(1.05)';
+				card.style.zIndex = '10';
+			} else {
+				card.style.transform = 'scale(1)';
+				card.style.zIndex = '1';
+			}
+		});
+		
+		currentTestimonial = (currentTestimonial + 1) % testimonialCards.length;
+	};
+	
+	// Auto-rotate testimonials every 5 seconds
+	if (testimonialCards.length > 0) {
+		setInterval(rotateTestimonials, 5000);
+	}
+	
+	// ===================================
+	// Blog Card Interactions
+	// ===================================
+	
+	const blogCards = document.querySelectorAll('.blog-card');
+	
+	blogCards.forEach(card => {
+		// Add read time calculation
+		const content = card.querySelector('.blog-content');
+		if (content) {
+			const text = content.textContent;
+			const wordCount = text.split(/\s+/).length;
+			const readTime = Math.ceil(wordCount / 200); // Average reading speed
+			
+			const metaTime = card.querySelector('.blog-meta span:nth-child(2)');
+			if (metaTime && !metaTime.textContent.includes('min read')) {
+				metaTime.innerHTML = `<i class="fas fa-clock"></i> ${readTime} min read`;
+			}
+		}
+	});
+	
+	// ===================================
+	// Form Validation (if contact form exists)
+	// ===================================
+	
+	const contactForm = document.querySelector('.contact-form');
+	
+	if (contactForm) {
+		contactForm.addEventListener('submit', (e) => {
+			e.preventDefault();
+			
+			const formData = new FormData(contactForm);
+			const data = Object.fromEntries(formData);
+			
+			// Basic validation
+			if (!data.email || !data.message) {
+				alert('Please fill in all required fields');
+				return;
+			}
+			
+			// Email validation
+			const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+			if (!emailRegex.test(data.email)) {
+				alert('Please enter a valid email address');
+				return;
+			}
+			
+			// Success message
+			alert('Thank you for your message! I will get back to you soon.');
+			contactForm.reset();
+		});
+	}
+	
+	// ===================================
+	// Print Styles Handler
+	// ===================================
+	
+	window.addEventListener('beforeprint', () => {
+		// Hide unnecessary elements when printing
+		document.querySelectorAll('.floating-nav, .back-to-top, .animated-bg').forEach(el => {
+			el.style.display = 'none';
+		});
+	});
+	
+	window.addEventListener('afterprint', () => {
+		// Restore elements after printing
+		document.querySelectorAll('.floating-nav, .back-to-top, .animated-bg').forEach(el => {
+			el.style.display = '';
+		});
+	});
+	
+	// ===================================
+	// Analytics Event Tracking (Optional)
+	// ===================================
+	
+	const trackEvent = (category, action, label) => {
+		// Placeholder for analytics tracking
+		// Replace with your analytics service (Google Analytics, etc.)
+		console.log(`Event: ${category} - ${action} - ${label}`);
+	};
+	
+	// Track button clicks
+	document.querySelectorAll('.btn, .social-link').forEach(button => {
+		button.addEventListener('click', () => {
+			trackEvent('Button', 'Click', button.textContent.trim());
+		});
+	});
+	
+	// Track section views
+	const sectionObserver = new IntersectionObserver((entries) => {
+		entries.forEach(entry => {
+			if (entry.isIntersecting) {
+				trackEvent('Section', 'View', entry.target.id);
+			}
+		});
+	}, { threshold: 0.5 });
+	
+	sections.forEach(section => {
+		if (section.id) {
+			sectionObserver.observe(section);
+		}
+	});
 	
 	// ===================================
 	// Console Message

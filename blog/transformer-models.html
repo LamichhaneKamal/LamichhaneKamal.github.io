@@ -1,0 +1,480 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Understanding Transformer Models - Kamal Lamichhane</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	<link rel="stylesheet" href="../modern-style.css" />
+	<style>
+		.blog-post {
+			max-width: 900px;
+			margin: 8rem auto 4rem;
+			padding: 0 2rem;
+		}
+		.blog-header {
+			margin-bottom: 3rem;
+		}
+		.blog-title {
+			font-size: 3rem;
+			font-weight: 900;
+			color: var(--white);
+			margin-bottom: 1rem;
+			line-height: 1.2;
+		}
+		.blog-post-meta {
+			display: flex;
+			gap: 2rem;
+			color: var(--gray);
+			margin-bottom: 2rem;
+		}
+		.blog-post-meta span {
+			display: flex;
+			align-items: center;
+			gap: 0.5rem;
+		}
+		.blog-post-content {
+			color: var(--light);
+			line-height: 1.8;
+			font-size: 1.1rem;
+		}
+		.blog-post-content h2 {
+			color: var(--white);
+			font-size: 2rem;
+			margin: 3rem 0 1.5rem;
+		}
+		.blog-post-content h3 {
+			color: var(--white);
+			font-size: 1.5rem;
+			margin: 2rem 0 1rem;
+		}
+		.blog-post-content p {
+			margin-bottom: 1.5rem;
+		}
+		.blog-post-content ul, .blog-post-content ol {
+			margin: 1.5rem 0;
+			padding-left: 2rem;
+		}
+		.blog-post-content li {
+			margin-bottom: 1rem;
+		}
+		.blog-post-content code {
+			background: rgba(99, 102, 241, 0.1);
+			padding: 0.2rem 0.5rem;
+			border-radius: 4px;
+			color: var(--accent);
+		}
+		.blog-post-content blockquote {
+			border-left: 4px solid var(--primary);
+			padding-left: 2rem;
+			margin: 2rem 0;
+			font-style: italic;
+			color: var(--gray);
+		}
+		.back-link {
+			display: inline-flex;
+			align-items: center;
+			gap: 0.5rem;
+			color: var(--primary);
+			text-decoration: none;
+			margin-bottom: 2rem;
+			transition: var(--transition-fast);
+		}
+		.back-link:hover {
+			color: var(--accent);
+			transform: translateX(-5px);
+		}
+	</style>
+</head>
+<body>
+	<div class="animated-bg">
+		<div class="gradient-orb orb-1"></div>
+		<div class="gradient-orb orb-2"></div>
+		<div class="gradient-orb orb-3"></div>
+	</div>
+
+	<div class="blog-post">
+		<a href="../index.html#blog" class="back-link">
+			<i class="fas fa-arrow-left"></i> Back to Blog
+		</a>
+
+		<div class="blog-header">
+			<h1 class="blog-title">Understanding Transformer Models: The Architecture That Changed AI</h1>
+			<div class="blog-post-meta">
+				<span><i class="fas fa-calendar"></i> January 10, 2026</span>
+				<span><i class="fas fa-clock"></i> 15 min read</span>
+				<span><i class="fas fa-tag"></i> Transformers, Deep Learning</span>
+			</div>
+		</div>
+
+		<div class="blog-post-content">
+			<blockquote style="background: rgba(255, 193, 7, 0.1); border-left: 4px solid #ffc107; padding: 1rem 1.5rem; margin: 0 0 2rem 0; border-radius: 4px;">
+				<p style="margin: 0; font-size: 0.95rem; font-style: normal;"><strong>Disclaimer:</strong> The views and opinions expressed in this article are those of the author and do not necessarily reflect the official policy or position of Qualcomm Incorporated or any of its affiliated companies.</p>
+			</blockquote>
+
+			<p>The transformer architecture, introduced in the 2017 paper "Attention is All You Need," revolutionized natural language processing and beyond. This article provides a comprehensive exploration of transformers, from their fundamental mechanisms to their modern applications and variants.</p>
+
+			<h2>The Pre-Transformer Era</h2>
+			
+			<p>Before transformers, sequence modeling relied primarily on recurrent neural networks (RNNs) and their variants:</p>
+
+			<ul>
+				<li><strong>RNNs:</strong> Processed sequences step-by-step, suffering from vanishing gradients</li>
+				<li><strong>LSTMs:</strong> Introduced gating mechanisms to capture long-term dependencies</li>
+				<li><strong>GRUs:</strong> Simplified LSTM architecture with fewer parameters</li>
+				<li><strong>Seq2Seq:</strong> Encoder-decoder architecture for translation tasks</li>
+			</ul>
+
+			<p>These architectures had fundamental limitations:</p>
+
+			<ul>
+				<li>Sequential processing prevented parallelization</li>
+				<li>Long-range dependencies were difficult to capture</li>
+				<li>Training was slow and computationally expensive</li>
+				<li>Information bottleneck in fixed-size context vectors</li>
+			</ul>
+
+			<h2>The Transformer Revolution</h2>
+			
+			<p>Transformers addressed these limitations through three key innovations:</p>
+
+			<h3>1. Self-Attention Mechanism</h3>
+			
+			<p>The core of the transformer is the self-attention mechanism, which allows each position in a sequence to attend to all other positions:</p>
+
+			<ul>
+				<li><strong>Query, Key, Value:</strong> Each input is projected into three vectors</li>
+				<li><strong>Attention Scores:</strong> Computed as dot product of queries and keys</li>
+				<li><strong>Weighted Sum:</strong> Values are weighted by attention scores</li>
+				<li><strong>Parallel Processing:</strong> All positions computed simultaneously</li>
+			</ul>
+
+			<p>The attention formula: <code>Attention(Q, K, V) = softmax(QK^T / √d_k)V</code></p>
+
+			<h3>2. Multi-Head Attention</h3>
+			
+			<p>Instead of single attention, transformers use multiple attention "heads":</p>
+
+			<ul>
+				<li>Each head learns different aspects of relationships</li>
+				<li>Heads can focus on different positions or features</li>
+				<li>Outputs are concatenated and linearly transformed</li>
+				<li>Typical models use 8-16 attention heads</li>
+			</ul>
+
+			<h3>3. Positional Encoding</h3>
+			
+			<p>Since transformers process all positions in parallel, they need explicit position information:</p>
+
+			<ul>
+				<li>Sinusoidal functions encode absolute positions</li>
+				<li>Learned positional embeddings are also common</li>
+				<li>Relative position encodings capture relationships</li>
+				<li>Rotary Position Embeddings (RoPE) in modern models</li>
+			</ul>
+
+			<h2>Transformer Architecture Components</h2>
+			
+			<h3>Encoder</h3>
+			
+			<p>The encoder processes input sequences:</p>
+
+			<ul>
+				<li><strong>Input Embedding:</strong> Converts tokens to dense vectors</li>
+				<li><strong>Positional Encoding:</strong> Adds position information</li>
+				<li><strong>Multi-Head Attention:</strong> Captures relationships between tokens</li>
+				<li><strong>Feed-Forward Network:</strong> Applies non-linear transformations</li>
+				<li><strong>Layer Normalization:</strong> Stabilizes training</li>
+				<li><strong>Residual Connections:</strong> Enables deep networks</li>
+			</ul>
+
+			<h3>Decoder</h3>
+			
+			<p>The decoder generates output sequences:</p>
+
+			<ul>
+				<li><strong>Masked Self-Attention:</strong> Prevents looking at future tokens</li>
+				<li><strong>Cross-Attention:</strong> Attends to encoder outputs</li>
+				<li><strong>Feed-Forward Network:</strong> Same as encoder</li>
+				<li><strong>Output Projection:</strong> Maps to vocabulary</li>
+			</ul>
+
+			<h2>Training Transformers</h2>
+			
+			<h3>Pre-training Objectives</h3>
+			
+			<p>Modern transformers use various pre-training strategies:</p>
+
+			<ul>
+				<li><strong>Masked Language Modeling (MLM):</strong> Predict masked tokens (BERT)</li>
+				<li><strong>Causal Language Modeling:</strong> Predict next token (GPT)</li>
+				<li><strong>Span Corruption:</strong> Predict corrupted spans (T5)</li>
+				<li><strong>Denoising:</strong> Reconstruct from noisy input</li>
+			</ul>
+
+			<h3>Optimization Techniques</h3>
+			
+			<p>Training large transformers requires careful optimization:</p>
+
+			<ul>
+				<li><strong>Adam Optimizer:</strong> Adaptive learning rates</li>
+				<li><strong>Learning Rate Scheduling:</strong> Warmup and decay</li>
+				<li><strong>Gradient Clipping:</strong> Prevents exploding gradients</li>
+				<li><strong>Mixed Precision Training:</strong> FP16/BF16 for efficiency</li>
+				<li><strong>Gradient Accumulation:</strong> Simulates larger batches</li>
+			</ul>
+
+			<h2>Transformer Variants</h2>
+			
+			<h3>Encoder-Only Models</h3>
+			
+			<p>Designed for understanding tasks:</p>
+
+			<ul>
+				<li><strong>BERT:</strong> Bidirectional encoding for classification</li>
+				<li><strong>RoBERTa:</strong> Optimized BERT training</li>
+				<li><strong>ALBERT:</strong> Parameter-efficient BERT</li>
+				<li><strong>DeBERTa:</strong> Disentangled attention mechanism</li>
+			</ul>
+
+			<h3>Decoder-Only Models</h3>
+			
+			<p>Optimized for generation:</p>
+
+			<ul>
+				<li><strong>GPT Series:</strong> Autoregressive language models</li>
+				<li><strong>LLaMA:</strong> Efficient open-source models</li>
+				<li><strong>Mistral:</strong> High-performance 7B model</li>
+				<li><strong>Phi:</strong> Small but capable models</li>
+			</ul>
+
+			<h3>Encoder-Decoder Models</h3>
+			
+			<p>For sequence-to-sequence tasks:</p>
+
+			<ul>
+				<li><strong>T5:</strong> Text-to-text transfer transformer</li>
+				<li><strong>BART:</strong> Denoising autoencoder</li>
+				<li><strong>mT5:</strong> Multilingual T5</li>
+			</ul>
+
+			<h2>Efficiency Improvements</h2>
+			
+			<h3>Attention Optimization</h3>
+			
+			<p>Standard attention has O(n²) complexity. Various approaches reduce this:</p>
+
+			<ul>
+				<li><strong>Sparse Attention:</strong> Only attend to subset of positions</li>
+				<li><strong>Linear Attention:</strong> Approximate attention in linear time</li>
+				<li><strong>Flash Attention:</strong> IO-aware attention implementation</li>
+				<li><strong>Multi-Query Attention:</strong> Share keys and values across heads</li>
+				<li><strong>Grouped-Query Attention:</strong> Balance between MHA and MQA</li>
+			</ul>
+
+			<h3>Model Compression</h3>
+			
+			<p>Making transformers more efficient:</p>
+
+			<ul>
+				<li><strong>Distillation:</strong> Transfer knowledge to smaller models</li>
+				<li><strong>Pruning:</strong> Remove unnecessary parameters</li>
+				<li><strong>Quantization:</strong> Reduce precision</li>
+				<li><strong>Low-Rank Factorization:</strong> Decompose weight matrices</li>
+			</ul>
+
+			<h2>Advanced Techniques</h2>
+			
+			<h3>Mixture of Experts (MoE)</h3>
+			
+			<p>Scale model capacity without proportional compute increase:</p>
+
+			<ul>
+				<li>Route inputs to specialized expert networks</li>
+				<li>Only activate subset of parameters per input</li>
+				<li>Enables trillion-parameter models</li>
+				<li>Requires careful load balancing</li>
+			</ul>
+
+			<h3>Retrieval-Augmented Generation</h3>
+			
+			<p>Combine transformers with external knowledge:</p>
+
+			<ul>
+				<li>Retrieve relevant documents for context</li>
+				<li>Reduce hallucinations</li>
+				<li>Update knowledge without retraining</li>
+				<li>Improve factual accuracy</li>
+			</ul>
+
+			<h3>Constitutional AI and RLHF</h3>
+			
+			<p>Align models with human preferences:</p>
+
+			<ul>
+				<li><strong>Reinforcement Learning from Human Feedback:</strong> Fine-tune with human preferences</li>
+				<li><strong>Constitutional AI:</strong> Self-critique and improvement</li>
+				<li><strong>Direct Preference Optimization:</strong> Simpler alignment method</li>
+			</ul>
+
+			<h2>Applications Beyond NLP</h2>
+			
+			<h3>Computer Vision</h3>
+			
+			<p>Vision Transformers (ViT) apply transformers to images:</p>
+
+			<ul>
+				<li>Split images into patches</li>
+				<li>Treat patches as sequence tokens</li>
+				<li>Achieve state-of-the-art on image classification</li>
+				<li>Enable unified vision-language models</li>
+			</ul>
+
+			<h3>Audio Processing</h3>
+			
+			<p>Transformers excel at audio tasks:</p>
+
+			<ul>
+				<li>Speech recognition (Whisper)</li>
+				<li>Music generation (MusicLM)</li>
+				<li>Audio classification</li>
+				<li>Text-to-speech synthesis</li>
+			</ul>
+
+			<h3>Multimodal Models</h3>
+			
+			<p>Combining multiple modalities:</p>
+
+			<ul>
+				<li><strong>CLIP:</strong> Vision-language understanding</li>
+				<li><strong>Flamingo:</strong> Few-shot multimodal learning</li>
+				<li><strong>GPT-4V:</strong> Vision-enhanced language model</li>
+				<li><strong>Gemini:</strong> Native multimodal architecture</li>
+			</ul>
+
+			<h2>Challenges and Limitations</h2>
+			
+			<h3>Computational Cost</h3>
+			
+			<p>Training large transformers is expensive:</p>
+
+			<ul>
+				<li>Requires massive compute resources</li>
+				<li>High energy consumption</li>
+				<li>Long training times (weeks to months)</li>
+				<li>Significant carbon footprint</li>
+			</ul>
+
+			<h3>Context Length</h3>
+			
+			<p>Attention complexity limits context:</p>
+
+			<ul>
+				<li>Standard models handle 2K-8K tokens</li>
+				<li>Longer contexts require specialized techniques</li>
+				<li>Memory requirements grow quadratically</li>
+				<li>Recent models push to 100K+ tokens</li>
+			</ul>
+
+			<h3>Reasoning Limitations</h3>
+			
+			<p>Transformers struggle with certain tasks:</p>
+
+			<ul>
+				<li>Multi-step logical reasoning</li>
+				<li>Mathematical problem-solving</li>
+				<li>Causal understanding</li>
+				<li>Systematic generalization</li>
+			</ul>
+
+			<h2>Future Directions</h2>
+			
+			<h3>Architecture Innovations</h3>
+			
+			<p>Next-generation transformer designs:</p>
+
+			<ul>
+				<li><strong>State Space Models:</strong> Linear-time sequence modeling</li>
+				<li><strong>Hyena:</strong> Subquadratic attention alternatives</li>
+				<li><strong>RWKV:</strong> RNN-like efficiency with transformer performance</li>
+				<li><strong>Retentive Networks:</strong> Parallel training, recurrent inference</li>
+			</ul>
+
+			<h3>Scaling Laws</h3>
+			
+			<p>Understanding how performance scales:</p>
+
+			<ul>
+				<li>Chinchilla scaling laws for optimal compute allocation</li>
+				<li>Emergent abilities at scale</li>
+				<li>Diminishing returns investigation</li>
+				<li>Efficient scaling strategies</li>
+			</ul>
+
+			<h3>Interpretability</h3>
+			
+			<p>Understanding what transformers learn:</p>
+
+			<ul>
+				<li>Attention pattern analysis</li>
+				<li>Mechanistic interpretability</li>
+				<li>Circuit discovery</li>
+				<li>Probing classifiers</li>
+			</ul>
+
+			<h2>Best Practices</h2>
+			
+			<h3>Model Selection</h3>
+			
+			<p>Choosing the right transformer:</p>
+
+			<ul>
+				<li>Consider task requirements (understanding vs. generation)</li>
+				<li>Evaluate computational constraints</li>
+				<li>Balance model size and performance</li>
+				<li>Assess domain-specific needs</li>
+			</ul>
+
+			<h3>Fine-Tuning Strategies</h3>
+			
+			<p>Adapting pre-trained models:</p>
+
+			<ul>
+				<li><strong>Full Fine-Tuning:</strong> Update all parameters</li>
+				<li><strong>LoRA:</strong> Low-rank adaptation of weights</li>
+				<li><strong>Prefix Tuning:</strong> Learn task-specific prefixes</li>
+				<li><strong>Prompt Tuning:</strong> Optimize soft prompts</li>
+			</ul>
+
+			<h3>Deployment Considerations</h3>
+			
+			<p>Moving models to production:</p>
+
+			<ul>
+				<li>Quantization for efficiency</li>
+				<li>Model distillation for smaller footprint</li>
+				<li>Caching strategies for repeated queries</li>
+				<li>Batch processing for throughput</li>
+				<li>Monitoring and evaluation</li>
+			</ul>
+
+			<blockquote>
+				"Transformers didn't just improve natural language processing—they fundamentally changed how we think about sequence modeling, attention, and the architecture of intelligence itself."
+			</blockquote>
+
+			<h2>Conclusion</h2>
+			
+			<p>The transformer architecture represents one of the most significant breakthroughs in modern AI. Its elegant design—built on attention mechanisms, parallel processing, and scalability—has enabled unprecedented advances in natural language processing, computer vision, and beyond.</p>
+
+			<p>From BERT's bidirectional understanding to GPT's impressive generation capabilities, from Vision Transformers revolutionizing computer vision to multimodal models bridging different modalities, transformers have proven remarkably versatile and powerful.</p>
+
+			<p>As we continue to push the boundaries of what's possible with transformers—through architectural innovations, efficiency improvements, and novel training techniques—we're not just building better models. We're developing a deeper understanding of intelligence, learning, and the fundamental mechanisms that enable machines to understand and generate human-like content.</p>
+
+			<p>The transformer revolution is far from over. With ongoing research into more efficient architectures, better scaling strategies, and improved interpretability, the future of transformers—and AI more broadly—remains incredibly exciting.</p>
+		</div>
+	</div>
+
+	<script src="../modern-script.js"></script>
+</body>
+</html>

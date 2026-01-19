@@ -1,0 +1,50 @@
+# Jekyll Configuration for Kamal Lamichhane's Portfolio
+
+# Site settings
+title: Kamal Lamichhane
+email: klamichhane18@gmail.com
+description: >-
+  Staff AI Software Engineer specializing in AI Inference Acceleration, 
+  Generative AI, Embedded Systems, and Deep Learning.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://lamichhanekamal.github.io" # your site URL
+twitter_username: # your twitter username (optional)
+github_username: LamichhaneKamal
+
+# Build settings
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /blog/:title/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Kamal Lamichhane"
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md
+
+# Pagination
+paginate: 10
+paginate_path: "/blog/page:num/"

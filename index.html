@@ -1,81 +1,962 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Intro</title>
-    <link rel="stylesheet" href="style.css">
+	<title>Kamal Lamichhane - AI & Embedded Systems Expert</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	
+	<!-- Modern Fonts -->
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+	
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	
+	<!-- Custom Styles -->
+	<link rel="stylesheet" href="modern-style.css" />
 </head>
+
 <body>
-    <header>
-        <h1>Kamal Lamichhane</h1>
-        <p>Software Engineer | System ML/AI | Generative AI | ISO-26262</p> 
+	<!-- Animated Background -->
+	<div class="animated-bg">
+		<div class="gradient-orb orb-1"></div>
+		<div class="gradient-orb orb-2"></div>
+		<div class="gradient-orb orb-3"></div>
+	</div>
 
+	<!-- Floating Navigation -->
+	<nav class="floating-nav" id="mainNav">
+		<div class="nav-brand">KL</div>
+		<ul class="nav-menu">
+			<li><a href="#hero" class="nav-link active"><i class="fas fa-home"></i> Home</a></li>
+			<li><a href="#about" class="nav-link"><i class="fas fa-user"></i> About</a></li>
+			<li><a href="#skills" class="nav-link"><i class="fas fa-code"></i> Skills</a></li>
+			<li><a href="#experience" class="nav-link"><i class="fas fa-briefcase"></i> Experience</a></li>
+			<li><a href="#ai-work" class="nav-link"><i class="fas fa-robot"></i> AI Work</a></li>
+			<li><a href="#research" class="nav-link"><i class="fas fa-flask"></i> Research</a></li>
+			<li><a href="#education" class="nav-link"><i class="fas fa-graduation-cap"></i> Education</a></li>
+			<li><a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
+		</ul>
+		<div class="hamburger">
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+	</nav>
 
-        <nav>
-            <ul>
-                <li><a href="index.html">Personal Intro</a></li>
-                <li><a href="education.html">Education</a></li>
-                <li><a href="work_experience.html">Work Experience</a></li>
-                <li><a href="contact.html">Connect With Me</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-<section>
-<div class="intro-section">
-    <h2 style="color: black;">Hello, I'm Kamal Lamichhane!</h2>
-    <h3 style="color: black;">I specialize in various cutting-edge technologies. Below are some key areas where I excel:</h3>
-    <div class="skills-highlight">
-        <div class="skill-card">
-            <span class="icon">🚀</span>
-            <h3>Artificial Intelligence & Generative AI</h3>
-            <p>Proficient in cutting-edge AI and Generative AI technologies.</p>
-        </div>
-        <div class="skill-card">
-            <span class="icon">🔧</span>
-            <h3>Embedded Systems & Automotive Software</h3>
-            <p>Experienced in Embedded Systems and Automotive Perception Stack/Software.</p>
-        </div>
-        <div class="skill-card">
-            <span class="icon">💡</span>
-            <h3>ADAS, C/C++, Firmware & Deep Learning</h3>
-            <p>Expert in ADAS, C/C++, firmware development, and advanced Deep Learning models.</p>
-        </div>
-    </div>
-</div>
+	<!-- Hero Section -->
+	<section id="hero" class="hero-section">
+		<div class="hero-content">
+			<div class="hero-text">
+				<div class="greeting">Hello, I'm</div>
+				<h1 class="hero-title">
+					<span class="gradient-text">Kamal</span>
+					<span class="gradient-text">Lamichhane</span>
+				</h1>
+				<div class="typing-container">
+					<span class="typing-text"></span>
+					<span class="cursor">|</span>
+				</div>
+				<p class="hero-description">
+					Staff AI Software Engineer @ Qualcomm | AI Inference Acceleration | Generative AI | System ML/AI | Embedded Systems | ISO-26262 | Deep Learning
+				</p>
+				<div class="hero-buttons">
+					<a href="#about" class="btn btn-primary">
+						<span>Explore My Work</span>
+						<i class="fas fa-arrow-down"></i>
+					</a>
+					<a href="documents/Resume.pdf" target="_blank" class="btn btn-secondary">
+						<span>Download Resume</span>
+						<i class="fas fa-download"></i>
+					</a>
+				</div>
+			</div>
+			<div class="hero-visual">
+				<div class="profile-card">
+					<div class="card-glow"></div>
+					<img src="images/portrait.png" alt="Kamal Lamichhane" class="profile-img">
+					<div class="floating-icons">
+						<div class="icon-item" style="--delay: 0s;"><i class="fas fa-microchip"></i></div>
+						<div class="icon-item" style="--delay: 0.5s;"><i class="fas fa-robot"></i></div>
+						<div class="icon-item" style="--delay: 1s;"><i class="fas fa-brain"></i></div>
+						<div class="icon-item" style="--delay: 1.5s;"><i class="fas fa-satellite"></i></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="scroll-indicator">
+			<div class="mouse">
+				<div class="wheel"></div>
+			</div>
+			<div class="arrow-down">
+				<span></span>
+				<span></span>
+			</div>
+		</div>
+	</section>
 
-</section>     
-<section>
-    <h2>Technical Skills:</h2>
-    <ul>
-        <li>AI Development (traditional/genAI) on Snapdragon SoCs (C/C++)</li>
-        <li>Embedded systems development (C/C++)</li>
-        <li>Machine Learning Frameworks (Tensorflow, Keras, CNN, LSTM)</li>
-        <li>Automotive Functional Safety (ISO-26262)</li>
-        <li>Web Development (HTML, PHP, Java)</li>
-        <li>ADAS Solutions development: Data acquisition platform, ComputerVision, CUDA, CNNs, Qt</li> 
-        <li>Skilled in embedded C/C++ software design, development, test,and refactoring.</li>
-        <li>Knowledge in Firmware, Bios, Operating Systems, Virtualization &software development.</li>
-        <li>Comfortable with low-level hardware, software/hardware debuggingand integration.</li>
-        <li>Experience with Statistical Data Analysis and Design ofExperiments.</li>
-        <li>Deep knowledge of communication protocols: RS232, RS485,Ethernet, TCP/IP, SPI, I2C.</li>
-        <li>Experience with software version control(Git, Clearcase, Perforce,Qvcs).</li>
-        <li>Web Applications development using HTML5, PHP, JAVA.</li>
-        <li>Knowledge in Unix/Linux shell scripting.</li>
-        <li>Knowledge in MATLAB/Simulink model-based development.</li>
-        <li>Experience with wide range of embedded/microcontrollers (TI,ARM/AVR, NXP) </li>
-        <li>Knowledge in a wide range of hardware development tools:Oscilloscope, Debugger, Analyzer etc. </li>
-        <li>ISO-26262, Automotive Functional Safety certified & experienced.</li>
-        <li>Machine Learning(Sklearn, Tensorflow, Keras --Generic learningalgorithms, CNN, LSTM) </li>
-        <li>AUTOSAR-C++, Software Safety, C++ static analysis </li>
-        <li>Deep Learning Frameworks, ML Systems, Transformer models (GPT/LLaMA) </li>
-        <li> For more details visit: http://lkml.ca </li>
+	<!-- About Section -->
+	<section id="about" class="section about-section">
+		<div class="container">
+			<div class="section-header">
+				<span class="section-tag">Get To Know Me</span>
+				<h2 class="section-title">About <span class="gradient-text">Me</span></h2>
+			</div>
+			<div class="about-content">
+				<div class="about-text">
+					<div class="info-card">
+						<div class="card-icon">
+							<i class="fas fa-robot"></i>
+						</div>
+						<div class="card-content">
+							<h3>AI & Generative AI</h3>
+							<p>Proficient in cutting-edge AI and Generative AI technologies, working on Qualcomm AI Runtime Engine and AI Accelerator HW.</p>
+							<p class="highlight">Transformer models (GPT/LLaMA), Deep Learning Frameworks</p>
+						</div>
+					</div>
+					<div class="info-card">
+						<div class="card-icon">
+							<i class="fas fa-microchip"></i>
+						</div>
+						<div class="card-content">
+							<h3>Embedded Systems & Automotive</h3>
+							<p>Experienced in Embedded Systems, Automotive Perception Stack, ADAS solutions, and safety-critical systems development.</p>
+							<p class="highlight">ISO-26262 Certified | Real-Time Systems Expert</p>
+						</div>
+					</div>
+					<div class="info-card">
+						<div class="card-icon">
+							<i class="fas fa-graduation-cap"></i>
+						</div>
+						<div class="card-content">
+							<h3>Education & Research</h3>
+							<p>MS in Computer Engineering from University of Waterloo. Published researcher in embedded systems and autonomous driving safety.</p>
+							<p class="highlight">7+ Publications | Teaching Experience</p>
+						</div>
+					</div>
+					<div class="quick-links">
+						<a href="https://github.com/LamichhaneKamal" target="_blank" class="quick-link">
+							<i class="fab fa-github"></i>
+							<span>GitHub Profile</span>
+						</a>
+						<a href="https://scholar.google.ca/citations?user=9pzNkQUAAAAJ&hl=en" target="_blank" class="quick-link">
+							<i class="fas fa-graduation-cap"></i>
+							<span>Google Scholar</span>
+						</a>
+					</div>
+				</div>
+				<div class="about-stats">
+					<div class="stat-card">
+						<div class="stat-number" data-target="15">0</div>
+						<div class="stat-label">Publications</div>
+						<p style="font-size: 0.8rem; margin-top: 0.5rem; opacity: 0.8;">(Selected shown)</p>
+					</div>
+					<div class="stat-card">
+						<div class="stat-number" data-target="10">0</div>
+						<div class="stat-label">Years Experience</div>
+					</div>
+					<div class="stat-card">
+						<div class="stat-number" data-target="30">0</div>
+						<div class="stat-label">Projects Completed</div>
+					</div>
+					<div class="stat-card">
+						<div class="stat-number" data-target="1000">0</div>
+						<div class="stat-label">Students Taught</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
-    </ul>
-</section>
+	<!-- Skills Section -->
+	<section id="skills" class="section skills-section">
+		<div class="container">
+			<div class="section-header">
+				<span class="section-tag">Technical Expertise</span>
+				<h2 class="section-title">Core <span class="gradient-text">Skills</span></h2>
+			</div>
+			<div class="skills-container">
+				<div class="skill-category">
+					<div class="category-header">
+						<i class="fas fa-brain"></i>
+						<h3>AI & Machine Learning</h3>
+					</div>
+					<div class="skill-items">
+						<div class="skill-item">
+							<div class="skill-info">
+								<span>Deep Learning (TensorFlow, Keras, PyTorch)</span>
+								<span class="skill-percent">95%</span>
+							</div>
+							<div class="skill-bar">
+								<div class="skill-progress" style="--width: 95%"></div>
+							</div>
+						</div>
+						<div class="skill-item">
+							<div class="skill-info">
+								<span>Generative AI & Transformer Models</span>
+								<span class="skill-percent">92%</span>
+							</div>
+							<div class="skill-bar">
+								<div class="skill-progress" style="--width: 92%"></div>
+							</div>
+						</div>
+						<div class="skill-item">
+							<div class="skill-info">
+								<span>CNN, LSTM, Neural Networks</span>
+								<span class="skill-percent">93%</span>
+							</div>
+							<div class="skill-bar">
+								<div class="skill-progress" style="--width: 93%"></div>
+							</div>
+						</div>
+						<div class="skill-item">
+							<div class="skill-info">
+								<span>Computer Vision & CUDA</span>
+								<span class="skill-percent">90%</span>
+							</div>
+							<div class="skill-bar">
+								<div class="skill-progress" style="--width: 90%"></div>
+							</div>
+						</div>
+					</div>
+				</div>
 
-    </main>
+				<div class="skill-category">
+					<div class="category-header">
+						<i class="fas fa-code"></i>
+						<h3>Programming Languages</h3>
+					</div>
+					<div class="skill-items">
+						<div class="skill-item">
+							<div class="skill-info">
+								<span>C/C++ (AUTOSAR C++)</span>
+								<span class="skill-percent">97%</span>
+							</div>
+							<div class="skill-bar">
+								<div class="skill-progress" style="--width: 97%"></div>
+							</div>
+						</div>
+						<div class="skill-item">
+							<div class="skill-info">
+								<span>Python</span>
+								<span class="skill-percent">93%</span>
+							</div>
+							<div class="skill-bar">
+								<div class="skill-progress" style="--width: 93%"></div>
+							</div>
+						</div>
+						<div class="skill-item">
+							<div class="skill-info">
+								<span>Assembly & Firmware</span>
+								<span class="skill-percent">88%</span>
+							</div>
+							<div class="skill-bar">
+								<div class="skill-progress" style="--width: 88%"></div>
+							</div>
+						</div>
+						<div class="skill-item">
+							<div class="skill-info">
+								<span>MATLAB/Simulink</span>
+								<span class="skill-percent">85%</span>
+							</div>
+							<div class="skill-bar">
+								<div class="skill-progress" style="--width: 85%"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="skill-category">
+					<div class="category-header">
+						<i class="fas fa-microchip"></i>
+						<h3>Embedded & Automotive</h3>
+					</div>
+					<div class="skill-items">
+						<div class="skill-item">
+							<div class="skill-info">
+								<span>RTOS (FreeRTOS, VxWorks)</span>
+								<span class="skill-percent">94%</span>
+							</div>
+							<div class="skill-bar">
+								<div class="skill-progress" style="--width: 94%"></div>
+							</div>
+						</div>
+						<div class="skill-item">
+							<div class="skill-info">
+								<span>ADAS Solutions & Perception</span>
+								<span class="skill-percent">92%</span>
+							</div>
+							<div class="skill-bar">
+								<div class="skill-progress" style="--width: 92%"></div>
+							</div>
+						</div>
+						<div class="skill-item">
+							<div class="skill-info">
+								<span>ARM/AVR/NXP Microcontrollers</span>
+								<span class="skill-percent">90%</span>
+							</div>
+							<div class="skill-bar">
+								<div class="skill-progress" style="--width: 90%"></div>
+							</div>
+						</div>
+						<div class="skill-item">
+							<div class="skill-info">
+								<span>ROS/ROS2</span>
+								<span class="skill-percent">88%</span>
+							</div>
+							<div class="skill-bar">
+								<div class="skill-progress" style="--width: 88%"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="skill-category">
+					<div class="category-header">
+						<i class="fas fa-shield-alt"></i>
+						<h3>Safety & Standards</h3>
+					</div>
+					<div class="skill-items">
+						<div class="skill-item">
+							<div class="skill-info">
+								<span>ISO 26262 (Functional Safety)</span>
+								<span class="skill-percent">95%</span>
+							</div>
+							<div class="skill-bar">
+								<div class="skill-progress" style="--width: 95%"></div>
+							</div>
+						</div>
+						<div class="skill-item">
+							<div class="skill-info">
+								<span>AUTOSAR C++ Compliance</span>
+								<span class="skill-percent">92%</span>
+							</div>
+							<div class="skill-bar">
+								<div class="skill-progress" style="--width: 92%"></div>
+							</div>
+						</div>
+						<div class="skill-item">
+							<div class="skill-info">
+								<span>FMEA & FTA Analysis</span>
+								<span class="skill-percent">90%</span>
+							</div>
+							<div class="skill-bar">
+								<div class="skill-progress" style="--width: 90%"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="skill-category">
+					<div class="category-header">
+						<i class="fas fa-network-wired"></i>
+						<h3>Communication Protocols</h3>
+					</div>
+					<div class="skill-items">
+						<div class="skill-item">
+							<div class="skill-info">
+								<span>CAN, I2C, SPI</span>
+								<span class="skill-percent">92%</span>
+							</div>
+							<div class="skill-bar">
+								<div class="skill-progress" style="--width: 92%"></div>
+							</div>
+						</div>
+						<div class="skill-item">
+							<div class="skill-info">
+								<span>TCP/IP, Ethernet</span>
+								<span class="skill-percent">90%</span>
+							</div>
+							<div class="skill-bar">
+								<div class="skill-progress" style="--width: 90%"></div>
+							</div>
+						</div>
+						<div class="skill-item">
+							<div class="skill-info">
+								<span>RS232, RS485</span>
+								<span class="skill-percent">88%</span>
+							</div>
+							<div class="skill-bar">
+								<div class="skill-progress" style="--width: 88%"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="skill-category">
+					<div class="category-header">
+						<i class="fas fa-tools"></i>
+						<h3>Tools & Platforms</h3>
+					</div>
+					<div class="skill-items">
+						<div class="skill-item">
+							<div class="skill-info">
+								<span>Git, CI/CD, DevOps</span>
+								<span class="skill-percent">90%</span>
+							</div>
+							<div class="skill-bar">
+								<div class="skill-progress" style="--width: 90%"></div>
+							</div>
+						</div>
+						<div class="skill-item">
+							<div class="skill-info">
+								<span>Linux/Unix Shell Scripting</span>
+								<span class="skill-percent">88%</span>
+							</div>
+							<div class="skill-bar">
+								<div class="skill-progress" style="--width: 88%"></div>
+							</div>
+						</div>
+						<div class="skill-item">
+							<div class="skill-info">
+								<span>Qt, Web Development</span>
+								<span class="skill-percent">85%</span>
+							</div>
+							<div class="skill-bar">
+								<div class="skill-progress" style="--width: 85%"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Experience Timeline Section -->
+	<section id="experience" class="section timeline-section">
+		<div class="container">
+			<div class="section-header">
+				<span class="section-tag">My Professional Journey</span>
+				<h2 class="section-title">Work <span class="gradient-text">Experience</span></h2>
+			</div>
+			<div class="timeline">
+				<div class="timeline-item" data-year="Dec 2024 - Present">
+					<div class="timeline-dot"></div>
+					<div class="timeline-content">
+						<div class="timeline-icon"><i class="fas fa-microchip"></i></div>
+						<h3>Staff AI Software Engineer</h3>
+						<p class="timeline-company">Qualcomm</p>
+						<p>Working on Qualcomm AI Runtime Engine and feature development on QAIRT for Qualcomm AI Accelerator HW. AUTOSAR C++ compliance for QNN SDK.</p>
+						<div class="tech-tags">
+							<span class="tag">C++</span>
+							<span class="tag">TensorFlow</span>
+							<span class="tag">CI/CD</span>
+							<span class="tag">AUTOSAR</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="timeline-item" data-year="Aug 2022 - Nov 2024">
+					<div class="timeline-dot"></div>
+					<div class="timeline-content">
+						<div class="timeline-icon"><i class="fas fa-robot"></i></div>
+						<h3>Senior AI Software Engineer</h3>
+						<p class="timeline-company">Qualcomm</p>
+						<p>Worked on Qualcomm AI Engine Direct SDK and development on Qualcomm AI Accelerator HW. Machine learning operators and ML testing/CI/CD.</p>
+						<div class="tech-tags">
+							<span class="tag">AI/ML</span>
+							<span class="tag">C++</span>
+							<span class="tag">QNN SDK</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="timeline-item" data-year="May 2022 - Aug 2022">
+					<div class="timeline-dot"></div>
+					<div class="timeline-content">
+						<div class="timeline-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+						<h3>Adjunct Professor</h3>
+						<p class="timeline-company">Seneca College</p>
+						<p>Taught computer programming courses at SEMET, Seneca College, focusing on C++, Python, and ROS.</p>
+						<div class="tech-tags">
+							<span class="tag">Teaching</span>
+							<span class="tag">C++</span>
+							<span class="tag">Python</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="timeline-item" data-year="Jun 2019 - Aug 2022">
+					<div class="timeline-dot"></div>
+					<div class="timeline-content">
+						<div class="timeline-icon"><i class="fas fa-car"></i></div>
+						<h3>Senior Software Developer, ADAS/AD Solutions</h3>
+						<p class="timeline-company">LeddarTech</p>
+						<p>Developed ADAS solutions including data acquisition platforms and computer vision applications. Deep learning for object detection from point cloud data.</p>
+						<div class="tech-tags">
+							<span class="tag">Deep Learning</span>
+							<span class="tag">ROS2</span>
+							<span class="tag">ADAS</span>
+							<span class="tag">Computer Vision</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="timeline-item" data-year="Feb 2018 - May 2019">
+					<div class="timeline-dot"></div>
+					<div class="timeline-content">
+						<div class="timeline-icon"><i class="fas fa-network-wired"></i></div>
+						<h3>Embedded Software Engineer</h3>
+						<p class="timeline-company">Ciena</p>
+						<p>Developed middleware for Packet-Optical Product on the 6500 platform. Application debugging frameworks and persistent mode changes.</p>
+						<div class="tech-tags">
+							<span class="tag">C++</span>
+							<span class="tag">Linux</span>
+							<span class="tag">Middleware</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="timeline-item" data-year="May 2017 - Dec 2017">
+					<div class="timeline-dot"></div>
+					<div class="timeline-content">
+						<div class="timeline-icon"><i class="fas fa-shield-alt"></i></div>
+						<h3>Functional Safety/Software Safety Engineer</h3>
+						<p class="timeline-company">Ricardo (Peloton Technology)</p>
+						<p>Developed and supported automotive functional safety activities as per ISO-26262. Performed safety analysis including FMEA and FTA.</p>
+						<div class="tech-tags">
+							<span class="tag">ISO-26262</span>
+							<span class="tag">FMEA</span>
+							<span class="tag">FTA</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="timeline-item" data-year="Sep 2016 - Aug 2017">
+					<div class="timeline-dot"></div>
+					<div class="timeline-content">
+						<div class="timeline-icon"><i class="fas fa-graduation-cap"></i></div>
+						<h3>Graduate Teaching Assistant</h3>
+						<p class="timeline-company">University of Waterloo</p>
+						<p>Designed and implemented a small Real-Time Executive (RTX) for embedded systems. Taught operating system and systems programming courses.</p>
+						<div class="tech-tags">
+							<span class="tag">RTX</span>
+							<span class="tag">Embedded Systems</span>
+							<span class="tag">OS</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="timeline-item" data-year="2015 - 2017">
+					<div class="timeline-dot"></div>
+					<div class="timeline-content">
+						<div class="timeline-icon"><i class="fas fa-car"></i></div>
+						<h3>Embedded Software Engineer</h3>
+						<p class="timeline-company">Magna Electronics</p>
+						<p>Line-Based Parking Slot Detection (LPSD) for Magna Auto Parking (MAP) and System Safety of Camera Module.</p>
+						<div class="tech-tags">
+							<span class="tag">Computer Vision</span>
+							<span class="tag">C/C++</span>
+							<span class="tag">ADAS</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- AI Work Section -->
+	<section id="ai-work" class="section ai-work-section">
+		<div class="container">
+			<div class="section-header">
+				<span class="section-tag">Cutting-Edge Technology</span>
+				<h2 class="section-title">AI & ML <span class="gradient-text">Projects</span></h2>
+			</div>
+			<div class="ai-grid">
+				<div class="ai-card">
+					<div class="ai-image">
+						<img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80" alt="AI Neural Network">
+						<div class="ai-overlay">
+							<div class="ai-badge">Qualcomm AI</div>
+						</div>
+					</div>
+					<div class="ai-content">
+						<div class="ai-icon"><i class="fas fa-brain"></i></div>
+						<h3>Qualcomm AI Runtime Engine (QAIRT)</h3>
+						<p>Development of AI Runtime Engine for Qualcomm's AI Accelerator Hardware. Feature development, optimization, and AUTOSAR C++ compliance for QNN SDK.</p>
+						<div class="tech-tags">
+							<span class="tag">Neural Networks</span>
+							<span class="tag">AI Accelerator</span>
+							<span class="tag">C++</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="ai-card">
+					<div class="ai-image">
+						<img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800&q=80" alt="Generative AI">
+						<div class="ai-overlay">
+							<div class="ai-badge">Generative AI</div>
+						</div>
+					</div>
+					<div class="ai-content">
+						<div class="ai-icon"><i class="fas fa-magic"></i></div>
+						<h3>Transformer Models & LLMs</h3>
+						<p>Working with state-of-the-art transformer models including GPT and LLaMA architectures. Deep learning frameworks and ML systems optimization.</p>
+						<div class="tech-tags">
+							<span class="tag">GPT</span>
+							<span class="tag">LLaMA</span>
+							<span class="tag">Transformers</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="ai-card">
+					<div class="ai-image">
+						<img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800&q=80" alt="Computer Vision">
+						<div class="ai-overlay">
+							<div class="ai-badge">Computer Vision</div>
+						</div>
+					</div>
+					<div class="ai-content">
+						<div class="ai-icon"><i class="fas fa-eye"></i></div>
+						<h3>ADAS & Object Detection</h3>
+						<p>Deep learning for pedestrian, car, and object detection from point cloud data. Computer vision applications for autonomous driving systems.</p>
+						<div class="tech-tags">
+							<span class="tag">CNN</span>
+							<span class="tag">CUDA</span>
+							<span class="tag">Point Cloud</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="ai-card">
+					<div class="ai-image">
+						<img src="https://images.unsplash.com/photo-1655720828018-edd2daec9349?w=800&q=80" alt="ML Operators">
+						<div class="ai-overlay">
+							<div class="ai-badge">ML Engineering</div>
+						</div>
+					</div>
+					<div class="ai-content">
+						<div class="ai-icon"><i class="fas fa-cogs"></i></div>
+						<h3>ML Operators & CI/CD</h3>
+						<p>Machine learning operators development and ML testing infrastructure. Continuous integration and deployment pipelines for AI systems.</p>
+						<div class="tech-tags">
+							<span class="tag">TensorFlow</span>
+							<span class="tag">CI/CD</span>
+							<span class="tag">Testing</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="ai-card">
+					<div class="ai-image">
+						<img src="https://images.unsplash.com/photo-1676277791608-ac5c30f8b1b7?w=800&q=80" alt="AI Chip">
+						<div class="ai-overlay">
+							<div class="ai-badge">Hardware AI</div>
+						</div>
+					</div>
+					<div class="ai-content">
+						<div class="ai-icon"><i class="fas fa-microchip"></i></div>
+						<h3>AI on Snapdragon SoCs</h3>
+						<p>AI development on Snapdragon System-on-Chips. Optimizing neural networks for mobile and embedded AI accelerators.</p>
+						<div class="tech-tags">
+							<span class="tag">Snapdragon</span>
+							<span class="tag">SoC</span>
+							<span class="tag">Optimization</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="ai-card">
+					<div class="ai-image">
+						<img src="https://images.unsplash.com/photo-1639322537228-f710d846310a?w=800&q=80" alt="Deep Learning">
+						<div class="ai-overlay">
+							<div class="ai-badge">Deep Learning</div>
+						</div>
+					</div>
+					<div class="ai-content">
+						<div class="ai-icon"><i class="fas fa-project-diagram"></i></div>
+						<h3>CNN & LSTM Networks</h3>
+						<p>Advanced deep learning with Convolutional and Long Short-Term Memory networks. TensorFlow, Keras, and PyTorch implementations.</p>
+						<div class="tech-tags">
+							<span class="tag">CNN</span>
+							<span class="tag">LSTM</span>
+							<span class="tag">Keras</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Research Section -->
+	<section id="research" class="section research-section">
+		<div class="container">
+			<div class="section-header">
+				<span class="section-tag">Innovation & Discovery</span>
+				<h2 class="section-title">Research <span class="gradient-text">Projects</span></h2>
+			</div>
+			<div class="research-grid">
+				<div class="research-card">
+					<div class="research-image">
+						<img src="images/PowerConsumption.png" alt="Program Tracing">
+						<div class="research-overlay">
+							<a href="#" class="view-btn">View Details</a>
+						</div>
+					</div>
+					<div class="research-content">
+						<div class="research-tag">Embedded Systems</div>
+						<h3>Non-Intrusive Program Tracing</h3>
+						<p>Advanced debugging techniques for embedded systems at deployment stage, enabling real-time monitoring without standard debugging tools.</p>
+						<div class="research-meta">
+							<span><i class="fas fa-calendar"></i> 2019</span>
+							<span><i class="fas fa-tag"></i> Debugging</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="research-card">
+					<div class="research-image">
+						<img src="images/satellite.png" alt="STUDSAT-2">
+						<div class="research-overlay">
+							<a href="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?tp=&arnumber=7180715" target="_blank" class="view-btn">View Paper</a>
+						</div>
+					</div>
+					<div class="research-content">
+						<div class="research-tag">Space Systems</div>
+						<h3>RTOS for STUDSAT-2</h3>
+						<p>Implemented Real-Time Operating System using FreeRTOS with 64 uniquely identified tasks for twin nano-satellite operations.</p>
+						<div class="research-meta">
+							<span><i class="fas fa-calendar"></i> 2015</span>
+							<span><i class="fas fa-tag"></i> IEEE Published</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="research-card">
+					<div class="research-image">
+						<img src="images/antenna.gif" alt="Wideband Antennas">
+						<div class="research-overlay">
+							<a href="../kamal-lamichhane.ca/projects/doc/iisc.pdf" target="_blank" class="view-btn">View Details</a>
+						</div>
+					</div>
+					<div class="research-content">
+						<div class="research-tag">RF Engineering</div>
+						<h3>Wideband Antenna Design</h3>
+						<p>Designed, simulated and tested four wideband antennas for aircraft applications including angle of arrival estimation and adaptive nulling.</p>
+						<div class="research-meta">
+							<span><i class="fas fa-calendar"></i> 2014</span>
+							<span><i class="fas fa-tag"></i> RF Design</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Publications -->
+			<div class="publications-section">
+				<h3 class="publications-title">
+					<i class="fas fa-book"></i>
+					Selected Publications
+				</h3>
+				<div class="publications-list">
+					<div class="publication-item">
+						<div class="pub-number">01</div>
+						<div class="pub-content">
+							<h4>Embedded RTOS Implementation for Twin Nano-Satellite STUDSAT-2</h4>
+							<p class="pub-authors"><strong>Kamal Lamichhane</strong>, Kiran M, Kannan T, Sandya S</p>
+							<p class="pub-venue">IEEE International Conference on Metrology for Aerospace, 2015</p>
+						</div>
+					</div>
+					<div class="publication-item">
+						<div class="pub-number">02</div>
+						<div class="pub-content">
+							<h4>Operational Flow for Twin Nano-Satellite Mission</h4>
+							<p class="pub-authors"><strong>Kamal Lamichhane</strong>, Kiran M, Kannan T, Sandya S</p>
+							<p class="pub-venue">IEEE International Conference on Metrology for Aerospace, 2015</p>
+						</div>
+					</div>
+					<div class="publication-item">
+						<div class="pub-number">03</div>
+						<div class="pub-content">
+							<h4>Actuation System Design and Payload Operation Flow for STUDSAT-2</h4>
+							<p class="pub-authors">Sandesh Hegde, Kannan T, <strong>Kamal Lamichhane</strong>, Sandya S</p>
+							<p class="pub-venue">66th International Astronautical Congress, 2015</p>
+						</div>
+					</div>
+					<div class="publication-item">
+						<div class="pub-number">04</div>
+						<div class="pub-content">
+							<h4>Performance Analysis Of Rectangular Patch Antenna Using Quarter Wave Feed Line</h4>
+							<p class="pub-authors">Dr. H.C.Nagaraj, Dr.T.S.Rukmini, Mr.Prasanna Paga, <strong>Kamal Lamichhane</strong></p>
+							<p class="pub-venue">International Conference on Academic Research in Engineering, Science And Technology, 2015</p>
+						</div>
+					</div>
+					<div class="publication-item">
+						<div class="pub-number">05</div>
+						<div class="pub-content">
+							<h4>Implementation and Comparative Study of Algorithms to Avoid Obstacles in Mobile Robot Navigation</h4>
+							<p class="pub-authors">Min Raj Nepali, Amar Mani Aryal, Ashutosh, <strong>Kamal Lamichhane</strong></p>
+							<p class="pub-venue">International Journal of Computer Applications 97(11):13-18, July 2014</p>
+						</div>
+					</div>
+					<div class="publication-item">
+						<div class="pub-number">06</div>
+						<div class="pub-content">
+							<h4>Early Breast Cancer Detection Using Statistical Parameters</h4>
+							<p class="pub-authors">H. C. Nagaraj, Prasanna Paga, <strong>Kamal Lamichhane</strong></p>
+							<p class="pub-venue">International Journal of Research in Engineering & Technology (IMPACT: IJRET), Vol. 2, Issue 3, Mar 2014</p>
+						</div>
+					</div>
+					<div class="publication-item">
+						<div class="pub-number">07</div>
+						<div class="pub-content">
+							<h4>IP Based Distributed Smart Camera Surveillance System for Forest Application</h4>
+							<p class="pub-authors"><strong>Kamal Lamichhane</strong>, Shreeyak S. Sajjan, Huggi Pooja, Rajesh N</p>
+							<p class="pub-venue">International Journal of Electronics Engineering, ISSN: 0973-7383, No.5 (2013) Issue No.: 2 (2013)</p>
+						</div>
+					</div>
+					<div class="publication-item">
+						<div class="pub-number">08</div>
+						<div class="pub-content">
+							<h4>Non-intrusive program tracing of non-preemptive multitasking systems using power consumption</h4>
+							<p class="pub-authors"><strong>K. Lamichhane</strong>, C. Moreno, S. Fischmeister</p>
+							<p class="pub-venue">2018 Design, Automation & Test in Europe Conference & Exhibition (DATE), Dresden, Germany, 2018, pp. 1147-1150, doi: 10.23919/DATE.2018.8342184</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Education Section -->
+	<section id="education" class="section education-section">
+		<div class="container">
+			<div class="section-header">
+				<span class="section-tag">Academic Background</span>
+				<h2 class="section-title">Education & <span class="gradient-text">Certifications</span></h2>
+			</div>
+			<div class="ai-grid">
+				<div class="ai-card">
+					<div class="ai-image">
+						<img src="https://images.unsplash.com/photo-1562774053-701939374585?w=800&q=80" alt="University of Waterloo">
+						<div class="ai-overlay">
+							<div class="ai-badge">GPA: 3.9/4.0</div>
+						</div>
+					</div>
+					<div class="ai-content">
+						<div class="ai-icon"><i class="fas fa-graduation-cap"></i></div>
+						<h3>University of Waterloo</h3>
+						<p class="degree-title">Master of Science (MS), Computer Engineering</p>
+						<p>Specialized in Real-Time Embedded Systems and Software. Worked on specification-based bug detection for embedded software and machine learning projects. Published papers in embedded systems and safety analysis for autonomous driving.</p>
+						<div class="tech-tags">
+							<span class="tag">Real-Time Systems</span>
+							<span class="tag">Machine Learning</span>
+							<span class="tag">Published Research</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="ai-card">
+					<div class="ai-image">
+						<img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=800&q=80" alt="NMIT Bangalore">
+						<div class="ai-overlay">
+							<div class="ai-badge">GPA: 9.73/10</div>
+						</div>
+					</div>
+					<div class="ai-content">
+						<div class="ai-icon"><i class="fas fa-university"></i></div>
+						<h3>Nitte Meenakshi Institute of Technology</h3>
+						<p class="degree-title">Bachelor of Engineering (B.E.), Electrical & Electronics Engineering</p>
+						<p>Worked on command and data handling for Project STUDSAT-2. Developed a real-time operating system using FreeRTOS for satellite operations.</p>
+						<div class="tech-tags">
+							<span class="tag">STUDSAT-2 Project</span>
+							<span class="tag">RTOS Development</span>
+							<span class="tag">Satellite Systems</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="ai-card">
+					<div class="ai-image">
+						<img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&q=80" alt="Professional Certifications">
+						<div class="ai-overlay">
+							<div class="ai-badge">Certified</div>
+						</div>
+					</div>
+					<div class="ai-content">
+						<div class="ai-icon"><i class="fas fa-certificate"></i></div>
+						<h3>Professional Certifications</h3>
+						<p class="degree-title">ISO-26262 Functional Safety & Full Stack Development</p>
+						<p>ISO-26262 Automotive Functional Safety certified. Full Stack Web Developer Certification from Free Code Camp.</p>
+						<div class="tech-tags">
+							<span class="tag">ISO-26262</span>
+							<span class="tag">Full Stack Dev</span>
+							<span class="tag">Safety Analysis</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Contact Section -->
+	<section id="contact" class="section contact-section">
+		<div class="container">
+			<div class="section-header">
+				<span class="section-tag">Get In Touch</span>
+				<h2 class="section-title">Let's <span class="gradient-text">Connect</span></h2>
+			</div>
+			<div class="contact-content">
+				<div class="contact-info">
+					<div class="contact-card">
+						<div class="contact-icon">
+							<i class="fas fa-envelope"></i>
+						</div>
+						<h3>Email</h3>
+						<a href="mailto:klamichhane18@gmail.com">klamichhane18@gmail.com</a>
+					</div>
+					<div class="contact-card">
+						<div class="contact-icon">
+							<i class="fas fa-map-marker-alt"></i>
+						</div>
+						<h3>Location</h3>
+						<p>San Diego, California<br>United States</p>
+					</div>
+					<div class="contact-card">
+						<div class="contact-icon">
+							<i class="fas fa-globe"></i>
+						</div>
+						<h3>Website</h3>
+						<a href="http://lkml.ca" target="_blank">lkml.ca</a>
+					</div>
+				</div>
+				<div class="social-links">
+					<a href="https://www.facebook.com/lamichhanekamal.com.np" target="_blank" class="social-link facebook">
+						<i class="fab fa-facebook-f"></i>
+						<span>Facebook</span>
+					</a>
+					<a href="https://scholar.google.ca/citations?user=9pzNkQUAAAAJ&hl=en" target="_blank" class="social-link scholar">
+						<i class="fas fa-graduation-cap"></i>
+						<span>Google Scholar</span>
+					</a>
+					<a href="https://ca.linkedin.com/in/lamichhanekamal" target="_blank" class="social-link linkedin">
+						<i class="fab fa-linkedin-in"></i>
+						<span>LinkedIn</span>
+					</a>
+					<a href="https://github.com/LamichhaneKamal" target="_blank" class="social-link github">
+						<i class="fab fa-github"></i>
+						<span>GitHub</span>
+					</a>
+					<a href="mailto:klamichhane18@gmail.com" class="social-link email">
+						<i class="fas fa-envelope"></i>
+						<span>Email</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Footer -->
+	<footer class="footer">
+		<div class="container">
+			<div class="footer-content">
+				<p>&copy; 2026 Kamal Lamichhane. All rights reserved.</p>
+				<p>Designed with <i class="fas fa-heart"></i> and modern web technologies</p>
+			</div>
+		</div>
+	</footer>
+
+	<!-- Scripts -->
+	<script src="modern-script.js"></script>
 </body>
 </html>

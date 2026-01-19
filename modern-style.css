@@ -864,6 +864,15 @@ body {
 	animation: fadeInUp 0.6s ease forwards;
 }
 
+/* Hide earlier roles by default; shown only when .show-all is set on .timeline */
+.timeline-item.earlier-role {
+	display: none;
+}
+
+.timeline.show-all .timeline-item.earlier-role {
+	display: flex;
+}
+
 .timeline-item:nth-child(odd) {
 	flex-direction: row-reverse;
 	animation-delay: 0.2s;

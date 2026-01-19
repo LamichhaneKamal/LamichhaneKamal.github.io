@@ -3,6 +3,15 @@
 // ===================================
 
 document.addEventListener('DOMContentLoaded', function() {
+	// Timeline: toggle earlier roles
+	const toggleEarlierRolesBtn = document.getElementById('toggleEarlierRoles');
+	const timelineEl = document.querySelector('.timeline');
+	if (toggleEarlierRolesBtn && timelineEl) {
+		toggleEarlierRolesBtn.addEventListener('click', () => {
+			const expanded = timelineEl.classList.toggle('show-all');
+			toggleEarlierRolesBtn.textContent = expanded ? 'Hide earlier roles' : 'Show earlier roles';
+		});
+	}
 	
 	// ===================================
 	// Navigation
